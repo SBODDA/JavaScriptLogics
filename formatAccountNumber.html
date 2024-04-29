@@ -1,0 +1,30 @@
+<script>
+
+let accountNbr = '12345678987';
+
+formatAccountNumberR(accountNbr);
+
+    function formatAccountNumber(accountNumber) {
+
+        if(accountNumber.length > 4) {
+            let mask = '';
+            for(let i=0; i < accountNumber.length - 4; i++){
+                mask += '*';
+            }
+            document.writeln(accountNumber.substring(0, 2) + mask + accountNumber.substring(accountNumber.length - 2));
+        } else {
+            document.writeln(accountNumber)
+        }
+    }
+
+    // Replace logic - replace returns new string after replacing the characters, primitives are immutable
+    function formatAccountNumberR(accountNumber) {
+
+        if(accountNumber.length > 4) {
+            for(let i=0; i < accountNumber.length - 4; i++){
+                accountNumber = accountNumber.replace(accountNumber.charAt(2+i), '*');
+            }
+        }
+        document.writeln(accountNumber)
+    }
+</script>
