@@ -1,0 +1,22 @@
+<script>
+    var myString = "java is a complex language, spring framework is good for integration, javaScript is a tricky language";
+    
+    document.writeln(getCamelCaseString(myString));
+    
+    function getCamelCaseString(inputString) {
+        var words = inputString.split(' ');
+        var result = [];
+        if(words instanceof Array) {
+            for(word of words) {
+                word = word.trim();
+                if(word.length > 0) {
+                    word = word.slice(0, 1).toUpperCase() + word.slice(1).toLowerCase();
+                } else if(word.length == 1) {
+                    word = word.slice(0, 1).toUpperCase();
+                }          
+                result.push(word);
+            }
+            return result.join(' ');
+        }
+     }
+</script>

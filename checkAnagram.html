@@ -1,0 +1,21 @@
+<script>
+    let inputString1 = 'listenin';
+    let inputString2 = 'silent';
+
+    document.writeln(inputString1 + '<BR>' + inputString2 + '<BR> Anagrams ' + checkAnagram(inputString1, inputString2));
+    
+    function checkAnagram(str1, str2) {
+        for (char of str1) {
+            if(str2.search(char) == -1) {
+                return false;
+            }
+        }
+        for (char of str2) {
+            if(str1.search(char) == -1) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+</script>

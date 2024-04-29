@@ -1,0 +1,24 @@
+<script>
+    var myString = "entertainment random";
+
+    document.writeln(getFirstNonRepeatedChar(myString));
+
+    function getFirstNonRepeated(inputString) {
+        var index = 0;
+        for(ch of inputString) { 
+            if(inputString.indexOf(ch, ++index) == -1) {
+            // if(inputString.search(ch, ++index) == -1) { // It Doesn't Work
+                return ch;
+            }
+        }
+    }
+
+    function getFirstNonRepeatedChar(inputString) {
+        var index = 0;
+        for(ch of inputString) { 
+            if(inputString.indexOf(ch) == inputString.lastIndexOf(ch)) {
+                return ch;
+            }
+        }
+    }
+</script>

@@ -1,0 +1,29 @@
+<script>
+    
+    var myString = "javascript entertainment randomnumbercounting psychologically chiropraticamente";
+    
+    document.writeln(getLengthyWordWithOutSort(myString));
+
+    function getLengthyWord(inputString) {
+        var arr = inputString.split(' ');
+        if(arr instanceof Array) {
+            // sort descending - longer items first
+            arr.sort((a, b) => b.length - a.length);
+            return (arr[0]);
+        }
+    }
+    // without using the in built array sort
+    function getLengthyWordWithOutSort(inputString) {
+        var arr = inputString.split(' ');
+        var lengthyWord = '';
+        if(arr instanceof Array) {
+            lengthyWord = arr[0];
+            for(word in arr) {
+                if(word.length > lengthyWord.length) {
+                    lengthyWord = word;
+                }
+            }
+        }
+        return lengthyWord;
+    }
+</script>

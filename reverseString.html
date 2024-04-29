@@ -1,0 +1,21 @@
+<script>
+    let inputString = 'Hello Good Morning';
+
+    reverseString1(inputString);
+    
+    reverseString2(inputString);
+
+    function reverseString1(str) {
+        let res1 = str.split('').reverse().join('');
+        document.writeln(res1);
+    }
+
+    function reverseString2(str) {
+        let revStr = '';
+        for (char of str) {
+            revStr = char + revStr; 
+        }
+        document.writeln(revStr)
+    }
+
+</script>

@@ -1,0 +1,23 @@
+<script>
+    var myString = "#T ravel7@raNdom!123";
+
+    document.writeln(moveSpecialCharsLogic(myString));
+
+    function moveSpecialCharsLogic(inputString) {
+        var result = '';
+        var ascii = 0;
+        var specials ='';
+        for(var i=0; i < inputString.length; i++) { 
+            ascii = inputString.charCodeAt(i);
+            if((ascii >= 97 && ascii <= 123) 
+                    || (ascii >= 65 && ascii <= 91) 
+                        || (ascii >= 48 && ascii <= 57)) {
+                result += inputString.charAt(i);
+            } else {
+                specials += inputString.charAt(i);
+            }
+        }
+        return result + specials;
+    }
+
+</script>

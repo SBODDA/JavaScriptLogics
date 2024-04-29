@@ -1,0 +1,23 @@
+<script>
+    var myString = "@#T ravel7@raNdom!123";
+
+    document.writeln(removeSpecialCharsLogic(myString));
+
+    function removeSpecialCharsLogic(inputString) {
+        var result = '';
+        var ascii = 0;
+        for(var i=0; i < inputString.length; i++) { 
+            ascii = inputString.charCodeAt(i);
+            if((ascii >= 97 && ascii <= 123) 
+                    || (ascii >= 65 && ascii <= 91) 
+                        || (ascii >= 48 && ascii <= 57)) {
+                result = result + inputString.charAt(i);
+            }
+        }
+        return result;
+    }
+
+    function removeSpecialChars(inputString) {
+        return inputString.match(/[a-zA-Z0-9]/g).join('');
+    }
+</script>
